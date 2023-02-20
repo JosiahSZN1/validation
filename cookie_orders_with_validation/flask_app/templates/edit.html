@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Order - Cookie Orders with Validation</title>
+</head>
+<body>
+    <div>
+        <h1>Change Order</h1>
+        <a href="/cookies">Back to purchases</a>
+    </div>
+    <form action="/cookies/edit/{{order_info['id']}}/log", method="post">
+        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div>
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="" value="{{order_info['customer_name']}}">
+        </div>
+        <div>
+            <label for="cookie_type">Cookie Type: </label>
+            <input type="text" name="cookie_type" id="" value="{{order_info['cookie_type']}}">
+        </div>
+        <div>
+            <label for="num_boxes">Number of boxes: </label>
+            <input type="number" min="1" name="num_boxes" id="" value="{{order_info['num_boxes']}}">
+        </div>
+        <button>Log</button>
+    </form>
+</body>
+</html>
