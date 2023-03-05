@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>The Wall - Coding Dojo Wall</title>
+</head>
+<body>
+    <div id="nav-bar">
+        <p>Coding Dojo Wall</p>
+        <div>
+            <p>Welcome, {{this_user}}</p>
+            <a href="/logout">log out</a>
+        </div>
+    </div>
+    <form action="/post-message" method="post">
+        <h3>What's on your mind? Create a new post: </h3>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <input type="submit" name="" id="">
+    </form>
+    <h2>All Community Posts</h2>
+    <div>
+        
+    </div>
+</body>
+</html>

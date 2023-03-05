@@ -1,0 +1,19 @@
+/* page reset */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: .5px dotted red;
+}
+
+#nav-bar {
+    border-bottom: 2px solid black;
+}
+
+#group-forms {
+    display: flex;
+}
+
+.buttons {
+    box-shadow: 2px 2px black;
+}
